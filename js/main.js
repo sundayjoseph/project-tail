@@ -156,5 +156,64 @@ function comb(p,q) {
 var first = comb(4,7);
 var second = comb('fuck',', gabe');
 
-document.body.children[0].style.background = 'red'
+document.body.children[0].style.background = 'grey';
 
+console.log(document.querySelectorAll('.different'))
+
+let numb = 25.6769;
+let newnumb = numb.toExponential(2);
+
+console.log(newnumb);
+
+function myfunction() {
+  document.getElementById('demo').innerHTML = 'Hello javascript';
+}
+
+
+// ARRAY
+
+var array = ['first','second','third'];
+
+// substract the last value into a variable
+// var sing = array.pop();
+// console.log(sing);
+
+// substract the remove value into a variable
+// var lag = array.shift();
+// console.log(lag);
+
+// console.log(array);
+
+
+if (array.indexOf('last') !== -1 ) {
+  console.log('Exists')
+} else {  
+  console.log('does not Exists')
+}
+
+
+var numbers = [5,10,15,20,25,30];
+
+var filter = numbers.map(function(number){
+  return number + 5;
+});
+console.log(filter);
+
+
+const firstName = ['jack','joel','joe','jackson'];
+
+firstName.forEach(function(name){
+  
+    console.log('I am ' + name)
+   
+});
+
+// var filterName = firstName.filter(function(name){
+//   return name !== 'jackson'
+// });
+
+console.log(filterName);
+
+// setTimeout(function(){
+//     console.log('Good Morning');
+// },3000)
