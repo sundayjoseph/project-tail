@@ -6,9 +6,13 @@ var mylast = 'life';
 var boolean = false;
 let movies = ['die hard','marvel',boolean];
 
+// for (let x of movies) {
+//   console.log(x);
+// }
+
 var user = {
   name:'peter',
-  lastname: 'parker'
+  lname: 'parker'
 }
 
 // IF STATEMENT
@@ -17,37 +21,40 @@ var username = 'jack';
 var password = 'jack08';
 
 if (username) {
-  console.log('yeah its jack')
+  // console.log('yeah its jack')
 } else {
-  console.log('its not jack')
+  // console.log('its not jack')
 }
 
 // SWITCH
 
-var slot = 4;
+let day;
 
-switch(slot) {
+switch(new Date().getDay()) {
 
-    case 1:
-      console.log('Won a tv');
+    case 0:
+      day = 'Sunday';
       break;
+    case 1:
+      day = 'Monday';
+      break;  
     case 2:
-      console.log('Won a ps');
+      day = 'Tuesday';
       break;  
     case 3:
-      console.log('Won a bike');
-      break;  
+      day = 'Wednesday';
+      break;
     case 4:
-      console.log('Won an iphone');
+      day = 'Thursday';
       break;
     case 5:
-      console.log('Won a watch');
-      break; 
-    default :
-      console.log('Try again');
-      break;   
-
+      day = 'Friday';
+      break;  
+    case 6:
+      day = 'Saturday';
+      break;    
 }
+document.getElementById('text').innerHTML = 'Today is ' + day;
 
 // OPERATORS
 
@@ -59,7 +66,7 @@ current += previous
 var fname = 'Dave';
 var message = 'Welcome back, ' + fname;
 
-console.log(message)
+// console.log(message)
 
 var total = 'Total amount is ' + (previous * current)
 
@@ -82,7 +89,7 @@ var total = 'Total amount is ' + (previous * current)
 
 // FOR LOOP
 
-for(var x = 1; x<=6; x++){
+for(let x = 0; x<=5; x++){
 
   // console.log(x)
 }
@@ -94,6 +101,15 @@ for(var n = 0; n < array.length; n++){
   // console.log(array[n])
 
 }
+
+for (let i = 0; i < 8; i++) {
+  if (i == 4) {
+    break;
+  }
+
+  console.log('the number is ' + i)
+}
+
 
 // WHILE LOOP
 
@@ -108,6 +124,14 @@ while (logged) {
   // console.log(i);
   i++
 }
+
+let q = 0;
+
+do {
+  // console.log('number ' + q);
+  q++;
+}
+while (q < 8);
 
 // FUNCTION
 
@@ -125,7 +149,6 @@ function logIn(){
   //console.log(logged);
   //console.log('Welcome back')
 }
-
 logIn()
 
 ////
@@ -133,7 +156,6 @@ function arguments(name,arg2){
   //console.log(name);
   //console.log(arg2)
 }
-
 arguments(1,1);
 ////
 
@@ -141,7 +163,6 @@ function calc(a,b){
   var sum = a + b;
   return sum;
 }
-
 var result = calc(5,5);
 var other = calc('James',' jones')
 
@@ -152,22 +173,24 @@ function comb(p,q) {
   var add = p + q;
   return add;
 }
-
 var first = comb(4,7);
 var second = comb('fuck',', gabe');
 
-document.body.children[0].style.background = 'grey';
 
-console.log(document.querySelectorAll('.different'))
 
 let numb = 25.6769;
 let newnumb = numb.toExponential(2);
 
-console.log(newnumb);
+// console.log(newnumb);
+
+//======= BODY =======
 
 function myfunction() {
   document.getElementById('demo').innerHTML = 'Hello javascript';
 }
+
+document.body.children[0].style.background = 'grey';
+
 
 
 // ARRAY
@@ -202,18 +225,172 @@ console.log(filter);
 
 const firstName = ['jack','joel','joe','jackson'];
 
-firstName.forEach(function(name){
+firstName.forEach(function(fname){
   
-    console.log('I am ' + name)
+    console.log('my name is ' + fname)
    
 });
 
-// var filterName = firstName.filter(function(name){
-//   return name !== 'jackson'
-// });
+let wholeNumb = [5,10,15,20,25,30];
+
+// wholeNumb.forEach(myfunction)
+
+// function myfunction(age) {
+//   console.log('my age is ' + age );
+// }
+
+var filterName = firstName.filter(function(name) {
+  return name !== 'jackson'
+});
 
 console.log(filterName);
+
+const arry = [2,4,6,8,10,12];
+
+var newarry = arry.flatMap((x) => x * 2);
+
+console.log(newarry);
 
 // setTimeout(function(){
 //     console.log('Good Morning');
 // },3000)
+
+let w = 0;
+
+for (;w < 5; w++) {
+  // console.log('countdown ' + w)
+}
+
+const unknown = {
+  firstname: 'David',
+  lastname: 'Yale',
+  age: 20,
+  school: 'Unilag'
+}
+
+for (let x in unknown) {
+  
+//  console.log(unknown[x])
+}
+
+const brands = ["BMW", "Volvo", "Mini","Toyota","Honda"];
+
+for (let x of brands) {
+  // console.log(x);
+}
+
+let x = 0;
+
+while (x < 8) {
+
+  // console.log(x);
+  x++;
+}
+
+
+const person = {
+  firstname: 'David',
+  lastname: 'Yate',
+  age: 20,
+  school: 'Unilag',
+  fullname : function () {
+    return this.firstname + " " + this.lastname;
+  }
+}
+
+document.getElementById('obj').innerHTML = person.fullname();
+
+const member = {
+  firstname : 'Danny',
+  lastname : 'Rand'
+}
+
+let method = person.fullname.bind(member);
+
+console.log(method());
+
+// ======== OBJECT, YOU UNDERSTAND OBJECT,YOU UNDERSTAND JAVASCRIPT ======== //
+
+
+const family = {
+  dad : 'John',
+  mum : 'Rebecca',
+  children : {
+    sister1 : 'Justeena',
+    sister2 : 'Opeyemi',
+    me : 'Timilehin'
+  }
+};
+// console.log(family);
+
+
+// HOW TO CONVERT AN OBJECT TO AN ARRAY
+// const objarray = Object.values(member);
+// console.log(objarray);
+
+// for (let x in family) {
+//     console.log(family[x]);
+// }
+
+const friend = {}
+friend.firstname = 'Henry';
+friend.lastname = 'Black';
+friend.age = 20;
+
+const person2 = {
+  firstName : 'Richard',
+  lastName : 'Ford',
+  language : 'English',
+  get lang() {
+   return this.language;
+  }
+};
+// console.log(person2.language);
+
+const obj = {counter : 5};
+
+function User1(first,last,age) {
+  this.firstName = first;
+  this.lastName = last;
+  this.age = age;
+}
+
+const myfather = new User1('James','DOe',45)
+
+console.log(myfather);
+
+const mymother = new User1('Rachel','Doe',40)
+
+console.log(mymother);
+
+// A SIMPLE FUNCTION CONSTRUCTOR CALCULATOR
+
+function Calculator() {
+
+    this.read = function() {
+      this.a = +prompt('a',0);
+      this.b = +prompt('b',0);
+    };
+
+    this.sum = function() {
+      return this.a + this.b;
+    };
+
+    this.mul = function() {
+      return this.a * this.b;
+    };
+
+    this.total = function() {
+      return this.sum() + this.mul();
+    };
+}
+
+let calculator = new Calculator();
+// calculator.read();
+
+// alert('Sum is =' + calculator.sum() );
+// alert('Mul is =' + calculator.mul() );
+// alert('The total is ' + calculator.total() );
+
+
+
