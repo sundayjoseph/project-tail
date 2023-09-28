@@ -185,11 +185,11 @@ let newnumb = numb.toExponential(2);
 
 //======= BODY =======
 
-function myfunction() {
-  document.getElementById('demo').innerHTML = 'Hello javascript';
-}
+// function myfunction() {
+//   document.getElementById('demo').innerHTML = 'Hello javascript';
+// }
 
-document.body.children[0].style.background = 'grey';
+// document.body.children[0].style.background = 'grey';
 
 
 
@@ -298,7 +298,7 @@ const person = {
   }
 }
 
-document.getElementById('obj').innerHTML = person.fullname();
+// document.getElementById('obj').innerHTML = person.fullname();
 
 const member = {
   firstname : 'Danny',
@@ -347,6 +347,26 @@ const person2 = {
 };
 // console.log(person2.language);
 
+const ladder = {
+  step: 0,
+  up() {
+    this.step++;
+    return this;
+  },
+  down() {
+    this.step--;
+    return this;
+  },
+  showstep: function() {
+    console.log(this.step);
+    return this;
+  }
+}
+
+ladder.up().up().down().showstep().down().showstep();
+// .up().up().up().showstep().down().showstep();
+
+
 const obj = {counter : 5};
 
 function User1(first,last,age) {
@@ -393,4 +413,71 @@ let calculator = new Calculator();
 // alert('The total is ' + calculator.total() );
 
 
+const task = {
+  width : 250,
+  height : 400,
+  age : 25,
+  name : 'Jacob'
+};
 
+function multiply(task) {
+  for (let key in task) {
+      if (typeof task[key] == 'number') {
+          task[key] *= 2;
+      }
+  }
+} 
+multiply(task);
+// console.log(task);
+
+const letters = new Set();
+
+letters.add('ade');
+letters.add('timi');
+letters.add('yemi');
+
+// console.log(letters);
+
+const apples = {name: 'Apples'};
+const mangoes = {name: 'Mangoes'};
+const bananas = {name: 'Bananas'};
+
+const fruits = new Map();
+
+fruits.set(apples, 300);
+fruits.set(bananas, 350);
+fruits.set(mangoes, 250);
+
+// console.log(fruits);
+
+
+class Car {
+    constructor (){
+      this.status = 'New Model';
+      this.brand = 'BMW';
+      this.year = 2015;
+    }  
+}
+
+const cars = new Car();
+const benz = new Car();
+benz.color = 'black';
+
+console.log(benz);
+
+// class Brand {
+//     constructor() {
+//         this.car = 'Toyota';
+//         this.cloth = 'Fenty';
+//         this.phone = 'iphone';
+//         this.shoe = 'Addidas';
+//     }
+// }
+
+// const store = new Brand();
+// store.location = 'Lagos';
+
+// const shop = new Brand();
+// shop.location = 'Abia';
+
+// console.log(shop);
